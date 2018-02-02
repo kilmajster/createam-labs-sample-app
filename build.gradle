@@ -15,17 +15,16 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 group = 'io.github.createam-labs'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2'
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile group: 'io.github.createam-labs', name: 'spring-boot-starter-heroku', version: '0.1.1'
+	compile('io.github.createam-labs:spring-boot-starter-heroku:0.1.2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
