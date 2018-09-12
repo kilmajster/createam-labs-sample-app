@@ -17,7 +17,14 @@
     <version>2.0.1.RELEASE</version>
     <relativePath/>
   </parent>
-
+  
+  <repositories>
+    <repository>
+       <id>projectlombok.org</id>
+       <url>https://projectlombok.org/edge-releases</url>
+    </repository>
+  </repositories>
+         
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -60,7 +67,8 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <optional>true</optional>
+      <version>edge-SNAPSHOT</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
