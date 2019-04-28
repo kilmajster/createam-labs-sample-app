@@ -1,7 +1,5 @@
 package io.github.createam.configuration;
 
-import lombok.SneakyThrows;
-import org.apache.commons.io.IOUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -10,8 +8,6 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import java.net.URL;
 
 @EnableSwagger2
 @Configuration
@@ -22,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
                         .title("Createam demo application")
-                        .description("Api documentation of dummy app.\n" + fetchHerokuSpringStarterReadmeAsString())
+                        .description("Api documentation of dummy app.\n")
                         .version("0.1")
                         .license("MIT").licenseUrl("https://raw.githubusercontent.com/createam-labs/spring-boot-starter-heroku/master/LICENSE")
                         .build())
@@ -32,12 +28,11 @@ public class SwaggerConfig {
                 .build();
     }
 
-    @SneakyThrows
-    private String fetchHerokuSpringStarterReadmeAsString() {
-        URL DescriptionUrl = new URL("https://raw.githubusercontent.com/createam-labs/spring-boot-starter-heroku/master/README.md");
-
-        String herokuReadme = IOUtils.toString(DescriptionUrl);
-
-        return herokuReadme;
-    }
+//    @SneakyThrows
+//    private String fetchHerokuSpringStarterReadmeAsString() {
+//        URL DescriptionUrl = new URL("https://raw.githubusercontent.com/createam-labs/spring-boot-starter-heroku/master/README.md");
+//
+//
+//        return herokuReadme;
+//    }
 }
