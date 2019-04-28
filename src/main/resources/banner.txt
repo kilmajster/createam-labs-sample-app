@@ -1,0 +1,9 @@
+
+${AnsiColor.GREEN} ██████╗██████╗ ███████╗${AnsiColor.BRIGHT_YELLOW} █████╗ ████████╗${AnsiColor.RED}███████╗ █████╗ ███╗   ███╗
+${AnsiColor.GREEN}██╔════╝██╔══██╗██╔════╝${AnsiColor.BRIGHT_YELLOW}██╔══██╗╚══██╔══╝${AnsiColor.RED}██╔════╝██╔══██╗████╗ ████║
+${AnsiColor.GREEN}██║     ██████╔╝█████╗  ${AnsiColor.BRIGHT_YELLOW}███████║   ██║   ${AnsiColor.RED}█████╗  ███████║██╔████╔██║
+${AnsiColor.GREEN}██║     ██╔══██╗██╔══╝  ${AnsiColor.BRIGHT_YELLOW}██╔══██║   ██║   ${AnsiColor.RED}██╔══╝  ██╔══██║██║╚██╔╝██║
+${AnsiColor.GREEN}╚██████╗██║  ██║███████╗${AnsiColor.BRIGHT_YELLOW}██║  ██║   ██║   ${AnsiColor.RED}███████╗██║  ██║██║ ╚═╝ ██║
+${AnsiColor.GREEN} ╚═════╝╚═╝  ╚═╝╚══════╝${AnsiColor.BRIGHT_YELLOW}╚═╝  ╚═╝   ╚═╝   ${AnsiColor.RED}╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+
+${AnsiColor.BLUE}Spring Boot version:${AnsiColor.BRIGHT_MAGENTA} ${spring-boot.version} ${AnsiColor.BLACK}
