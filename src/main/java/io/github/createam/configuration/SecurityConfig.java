@@ -1,25 +1,37 @@
 package io.github.createam.configuration;
 
-import org.springframework.context.annotation.Bean;
+import lombok.SneakyThrows;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
+@EnableWebSecurity
 @Configuration
-public class SecurityConfig {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("admin")
+    @SneakyThrows
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) {
+        auth.inMemoryAuthentication()
+                .withUser("user")
+                .password("password")
+                .roles("USER")
+                .and()
+                .withUser("admin")
                 .password("admin")
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(user);
+                .roles("USER", "ADMIN");
     }
 
+    @SneakyThrows
+    @Override
+    protected void configure(HttpSecurity http) {
+        http.authorizeRequests()
+                .anyRequest().permitAll();
+//                .authenticated()
+//                .and()
+//                .httpBasic();
+    }
 }
