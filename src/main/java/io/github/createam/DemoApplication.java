@@ -21,8 +21,6 @@ public class DemoApplication {
 
     @GetMapping("/")
     public RedirectView redirectToSwaggerUi(RedirectAttributes attributes, HttpServletRequest request) {
-//        attributes.addFlashAttribute("flashAttribute", "redirectWithRedirectAttributes");
-//        attributes.addAttribute("attribute", "redirectWithRedirectAttributes");
 
         log.info("Redirecting from {}, to {}", request.getRequestURL(), request.getRemoteAddr());
 

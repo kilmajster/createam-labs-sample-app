@@ -1,7 +1,5 @@
 package io.github.createam.configuration;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Predicates;
 import lombok.SneakyThrows;
 import org.apache.commons.io.IOUtils;
 import org.springframework.context.annotation.Bean;
