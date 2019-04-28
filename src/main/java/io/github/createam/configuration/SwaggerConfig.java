@@ -9,6 +9,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.Collections;
+
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
@@ -17,22 +19,14 @@ public class SwaggerConfig {
     public Docket swagger() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .title("Createam demo application")
-                        .description("Api documentation of dummy app.\n")
-                        .version("0.1")
-                        .license("MIT").licenseUrl("https://raw.githubusercontent.com/createam-labs/spring-boot-starter-heroku/master/LICENSE")
-                        .build())
+                        .title("\uD83D\uDD79 Demo application")
+                        .description("Https enforcing works! Success! \uD83D\uDC4C\n\n" + "![That's funny \uD83D\uDE02](https://media.giphy.com/media/JOi0IO9ByxIHK/giphy.gif)")
+                        .build()
+                ).useDefaultResponseMessages(false)
+                .protocols(Collections.singleton("https"))
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("io.github.createam.web"))
                 .paths(PathSelectors.any())
                 .build();
     }
-
-//    @SneakyThrows
-//    private String fetchHerokuSpringStarterReadmeAsString() {
-//        URL DescriptionUrl = new URL("https://raw.githubusercontent.com/createam-labs/spring-boot-starter-heroku/master/README.md");
-//
-//
-//        return herokuReadme;
-//    }
 }
