@@ -22,16 +22,6 @@ public class DemoApplication {
     @GetMapping("/")
     public RedirectView redirectToSwaggerUi(HttpServletRequest request) {
 
-        log.info("Request from {}", request.getRequestURL());
-
-        log.info("request.getRequestURL() {}", request.getRequestURL());
-        log.info("request.getRemoteHost() {}", request.getRemoteHost());
-        log.info("request.getRemoteAddr() {}", request.getRemoteAddr());
-        log.info("request.getRemoteUser() {}", request.getRemoteUser());
-        log.info("request.getRequestURI() {}", request.getRequestURI());
-        log.info("request.getAuthType() {}", request.getAuthType());
-        log.info("request.getServerName() {}", request.getServerName());
-
         return new RedirectView("/swagger-ui.html");
     }
 }

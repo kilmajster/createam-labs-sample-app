@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="current_timestamp" dbms="h2"/>
+
+    <changeSet author="Łukasz Włódarczyk" id="init-1">
+
+        <createTable tableName="web_request">
+            <column name="id" type="varchar(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_web_request"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="remote_host" type="varchar"/>
+            <column name="remote_addr" type="varchar"/>
+            <column name="remote_user" type="varchar"/>
+            <column name="request_uri" type="varchar"/>
+            <column name="auth_type" type="varchar"/>
+            <column name="server_name" type="varchar"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -28,10 +28,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @SneakyThrows
     @Override
     protected void configure(HttpSecurity http) {
+//        http.authorizeRequests().anyRequest().permitAll();
+
         http.authorizeRequests()
-                .anyRequest().permitAll();
-//                .authenticated()
-//                .and()
-//                .httpBasic();
+                .antMatchers("/").permitAll()
+                .antMatchers("/h2/**").permitAll();
+
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
+
+
     }
 }

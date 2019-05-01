@@ -25,7 +25,7 @@ public class SwaggerConfig {
                 ).useDefaultResponseMessages(false)
                 .protocols(Collections.singleton("https"))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("io.github.createam.web"))
+//                .apis(RequestHandlerSelectors.basePackage("io.github.createam.web"))
                 .paths(PathSelectors.any())
                 .build();
     }
