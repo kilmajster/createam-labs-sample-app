@@ -3,7 +3,6 @@ package io.github.createam.web;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.Entity;

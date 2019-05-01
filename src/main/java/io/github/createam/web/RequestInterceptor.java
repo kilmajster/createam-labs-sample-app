@@ -1,5 +1,6 @@
 package io.github.createam.web;
 
+import com.google.common.collect.Sets;
 import io.github.createam.dao.WebRequestRepository;
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +16,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 
     private final WebRequestRepository webRequestRepository;
 
-    static Set<String> IGNORED_URIS_FRAGMENTS = Set.of("springfox-swagger-ui", "swagger-resources");
+    static Set<String> IGNORED_URIS_FRAGMENTS = Sets.newHashSet("springfox-swagger-ui", "swagger-resources");
 
     public RequestInterceptor(WebRequestRepository webRequestRepository) {
         this.webRequestRepository = webRequestRepository;
