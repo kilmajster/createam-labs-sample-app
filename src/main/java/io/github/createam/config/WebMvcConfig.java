@@ -1,4 +1,4 @@
-package io.github.createam.configuration;
+package io.github.createam.config;
 
 import io.github.createam.dao.WebRequestRepository;
 import io.github.createam.web.RequestInterceptor;

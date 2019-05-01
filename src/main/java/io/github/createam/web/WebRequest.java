@@ -23,7 +23,6 @@ public class WebRequest implements Serializable {
     @Id
     private String id;
 
-    @CreatedDate
     private LocalDateTime created;
 
     @ApiModelProperty(value = "Request source host", required = false, example = "127.0.0.1 ")
@@ -42,6 +41,8 @@ public class WebRequest implements Serializable {
 
     @PrePersist
     public void prePersist() {
+        this.created = LocalDateTime.now();
+
         if(StringUtils.isEmpty(this.id)) {
             this.id = UUID.randomUUID().toString();
         }

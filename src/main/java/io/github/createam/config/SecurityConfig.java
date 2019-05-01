@@ -1,4 +1,4 @@
-package io.github.createam.configuration;
+package io.github.createam.config;
 
 import lombok.SneakyThrows;
 import org.springframework.context.annotation.Configuration;
